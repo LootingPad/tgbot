@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur2"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="28" result="blur3"/>
+      <feMerge>
+        <feMergeNode in="blur3"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="#000000"/>
+
+  <g filter="url(#neon)" fill="none" stroke="#CCFF00" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Head silhouette: bumpy top, soft side nubs, wavy ghost bottom -->
+    <path d="
+      M 512 210
+      C 560 205 600 218 635 245
+      C 668 270 695 300 710 340
+      C 728 385 735 430 730 475
+      C 726 520 715 560 705 595
+      C 698 620 710 640 730 655
+      C 755 672 770 700 765 735
+      C 760 770 735 800 700 815
+      C 670 828 640 820 615 805
+      C 595 793 575 800 560 820
+      C 545 842 525 855 512 858
+      C 499 855 479 842 464 820
+      C 449 800 429 793 409 805
+      C 384 820 354 828 324 815
+      C 289 800 264 770 259 735
+      C 254 700 269 672 294 655
+      C 314 640 326 620 319 595
+      C 309 560 298 520 294 475
+      C 289 430 296 385 314 340
+      C 329 300 356 270 389 245
+      C 424 218 464 205 512 210
+      Z
+    "/>
+
+    <!-- Squint eyes (n / upside-down U) -->
+    <path d="M 400 470 C 415 445 445 445 460 470"/>
+    <path d="M 564 470 C 579 445 609 445 624 470"/>
+
+    <!-- Tiny mouth dash -->
+    <path d="M 492 560 L 532 560"/>
+  </g>
+</svg>

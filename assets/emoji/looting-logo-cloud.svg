@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="b2"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="22" result="b3"/>
+      <feMerge>
+        <feMergeNode in="b3"/>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" fill="#000000"/>
+  <g filter="url(#glow)" fill="none" stroke="#CCFF00" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M512 195 C555 190 590 210 615 245 C645 220 690 225 715 265 C760 270 795 310 790 360 C830 385 845 440 820 485 C845 530 830 585 785 610 C810 665 760 695 710 685 C685 730 635 755 580 745 C555 780 480 780 455 745 C400 755 350 730 325 685 C275 695 225 665 230 610 C185 585 170 530 195 485 C170 440 185 385 225 360 C220 310 255 270 300 265 C325 225 370 220 400 245 C425 210 470 190 512 195 Z"/>
+    <path d="M395 455 C412 430 448 430 465 455"/>
+    <path d="M559 455 C576 430 612 430 629 455"/>
+    <path d="M470 545 C490 565 534 565 554 545"/>
+  </g>
+</svg>
