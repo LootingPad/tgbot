@@ -198,7 +198,7 @@ async function kickSpammer(
   recentByUser.delete(from.id);
   kickCooldownUntil.set(from.id, Date.now() + 30_000);
 
-  // Hapus history dulu, baru notifikasi
+  // Wipe history first, then notify
   await wipeUserTopicHistory(api, chatId, threadId, from.id, messageIds);
 
   // ban + unban = kick; user can rejoin
@@ -647,7 +647,7 @@ export function createRestrictBot(): Bot | null {
       `[restrict] wipe user=${from.id} thread=${threadId} msg=${msg.message_id}`,
     );
 
-    // Hapus pesan dulu (current + tracked), baru notifikasi
+    // Delete messages first (current + tracked), then notify
     try {
       await ctx.api.deleteMessage(msg.chat.id, msg.message_id);
     } catch (err) {
